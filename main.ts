@@ -84,6 +84,7 @@ const FONT: Record<string, string[]> = {
   ";": ["00000", "01100", "01100", "00000", "01100", "00100", "01000"],
   "'": ["00100", "00100", "01000", "00000", "00000", "00000", "00000"],
   "-": ["00000", "00000", "00000", "01110", "00000", "00000", "00000"],
+  "—": ["00000", "00000", "00000", "11111", "00000", "00000", "00000"],
   "/": ["00001", "00010", "00010", "00100", "01000", "01000", "10000"],
   "%": ["11001", "11010", "00010", "00100", "01000", "01011", "10011"],
   "&": ["01100", "10010", "10100", "01000", "10101", "10010", "01101"],
@@ -210,43 +211,43 @@ function build(): void {
   // ---- LEAD box 138..400 ----
   drawRect(32, 138, 960, 262, INK);
   drawText(48, 154, "MIDDLE EAST", 2, RED);
-  drawWrapped(48, 178, "HOUTHI DRONE HITS RIYADH'S TALLEST TOWER", 3, 592, 3, INK);
-  drawWrapped(48, 234, "11 wounded as PIF Tower is struck for a second time in a week, Saudi Civil Defence says", 2, 592, 4, INK);
-  let by = 292;
-  by = drawWrapped(48, by, "A Houthi drone struck the 385-metre PIF Tower in Riyadh's financial district on Tuesday, wounding 11 people.", 1, 592, 4, INK);
-  by = drawWrapped(48, by + 6, "It was the second hit on the same tower in under a week. The Saudi-led coalition called the attack a drone strike and vowed a decisive response.", 1, 592, 4, INK);
-  by = drawWrapped(48, by + 6, "The Houthis had not claimed the strike by Tuesday evening.", 1, 592, 4, INK);
-  // Skyline, right side of lead box: x 664..976, ground y 372
+  drawWrapped(48, 178, "HOUTHI DRONE HITS RIYADH'S TALLEST TOWER", 3, 712, 3, INK);
+  drawWrapped(48, 234, "11 wounded as PIF Tower is struck for a second time in a week, Saudi Civil Defence says", 2, 712, 4, INK);
+  let by = 278;
+  by = drawWrapped(48, by, "A Houthi drone struck the 385-metre PIF Tower in Riyadh's financial district on Tuesday, wounding 11 people.", 2, 712, 3, INK);
+  by = drawWrapped(48, by + 4, "It was the second hit on the same tower in under a week. The Saudi-led coalition called the attack a drone strike and vowed a decisive response.", 2, 712, 3, INK);
+  by = drawWrapped(48, by + 4, "The Houthis had not claimed the strike by Tuesday evening.", 2, 712, 3, INK);
+  // Skyline, right side of lead box: x 772..976, ground y 372
   // short building left
-  fillRect(676, 292, 62, 80, BLUE);
-  drawRect(676, 292, 62, 80, INK);
+  fillRect(772, 300, 40, 72, BLUE);
+  drawRect(772, 300, 40, 72, INK);
   // PIF Tower (tall)
-  fillRect(754, 172, 66, 200, INK);
-  fillRect(758, 176, 58, 196, BLUE);
+  fillRect(820, 172, 56, 200, INK);
+  fillRect(824, 176, 48, 196, BLUE);
   // tower crown
-  drawLine(754, 172, 787, 152, INK);
-  drawLine(820, 172, 787, 152, INK);
+  drawLine(820, 172, 848, 152, INK);
+  drawLine(876, 172, 848, 152, INK);
   // tower windows (paper dots)
   for (let wy = 190; wy < 360; wy += 18)
-    for (let wx = 766; wx < 810; wx += 14) fillRect(wx, wy, 6, 8, WHITE);
+    for (let wx = 830; wx < 868; wx += 12) fillRect(wx, wy, 5, 7, WHITE);
   // impact burst halfway up tower
-  drawCircle(787, 252, 16, RED);
-  drawCircle(787, 252, 9, WHITE);
-  drawLine(787, 252, 787, 222, RED);
-  drawLine(787, 252, 787, 282, RED);
-  drawLine(787, 252, 757, 252, RED);
-  drawLine(787, 252, 817, 252, RED);
-  drawLine(787, 252, 766, 231, RED);
-  drawLine(787, 252, 808, 273, RED);
-  drawLine(787, 252, 808, 231, RED);
-  drawLine(787, 252, 766, 273, RED);
+  drawCircle(848, 252, 16, RED);
+  drawCircle(848, 252, 9, WHITE);
+  drawLine(848, 252, 848, 222, RED);
+  drawLine(848, 252, 848, 282, RED);
+  drawLine(848, 252, 818, 252, RED);
+  drawLine(848, 252, 878, 252, RED);
+  drawLine(848, 252, 827, 231, RED);
+  drawLine(848, 252, 869, 273, RED);
+  drawLine(848, 252, 869, 231, RED);
+  drawLine(848, 252, 827, 273, RED);
   // short building right
-  fillRect(838, 312, 62, 60, BLUE);
-  drawRect(838, 312, 62, 60, INK);
-  fillRect(916, 332, 52, 40, BLUE);
-  drawRect(916, 332, 52, 40, INK);
+  fillRect(884, 312, 48, 60, BLUE);
+  drawRect(884, 312, 48, 60, INK);
+  fillRect(940, 332, 36, 40, BLUE);
+  drawRect(940, 332, 36, 40, INK);
   // ground line
-  fillRect(664, 372, 312, 3, INK);
+  fillRect(772, 372, 204, 3, INK);
 
   // ---- SECOND ROW 412..620 ----
   // vertical divider
@@ -319,7 +320,7 @@ function build(): void {
 
   // ---- Footer ----
   fillRect(32, 982, 960, 2, INK);
-  drawCentred(994, "THE WORLD IN ONE DAY - WEDNESDAY 25 NOVEMBER 2026 - ALL STORIES AS REPORTED ON 25 NOVEMBER 2026", 1, INK);
+  drawCentred(994, "THE WORLD IN ONE DAY — WEDNESDAY 25 NOVEMBER 2026 — ALL STORIES AS REPORTED ON 25 NOVEMBER 2026", 1, INK);
 }
 
 // ---------- PNG encode ----------
